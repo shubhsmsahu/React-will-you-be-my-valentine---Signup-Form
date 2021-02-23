@@ -46,7 +46,7 @@ const App = () => {
         return { ...prevalue, inputName: false };
       });
     }
-    if (!fullName.email.includes("@") || fullName.name === "") {
+    if (!fullName.email.includes("@") || fullName.email === "") {
       console.log("error");
       setInputError((prevalue) => {
         return {
@@ -111,7 +111,15 @@ const App = () => {
   };
   return (
     <div id="main">
-      <h1>{userName}</h1>
+      {!inputError.inputName &&
+      !inputError.inputEmail &&
+      !inputError.inputGender &&
+      !inputError.inputNumber &&
+      !inputError.inputPass ? (
+        <h1>{userName}</h1>
+      ) : (
+        ""
+      )}
       <InputBox
         data="name"
         type="alphanumeric"
