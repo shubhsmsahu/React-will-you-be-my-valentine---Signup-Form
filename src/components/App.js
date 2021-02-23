@@ -62,7 +62,7 @@ const App = () => {
         };
       });
       let sub = fullName.email.split("@");
-      setUserName(Hello + sub[0]);
+      setUserName("Hello" + " " + sub[0]);
     }
     if (fullName.gender === "") {
       console.log("error");
